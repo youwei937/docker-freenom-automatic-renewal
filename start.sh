@@ -16,6 +16,15 @@ if [ "${TELEGRAM_BOT_TOKEN}" != '' ]; then sed -i "s/^TELEGRAM_BOT_TOKEN=.*$/TEL
 if [ "${TELEGRAM_BOT_ENABLE}" != '' ]; then sed -i "s/^TELEGRAM_BOT_ENABLE=.*$/TELEGRAM_BOT_ENABLE='${TELEGRAM_BOT_ENABLE}'/" /freenom/.env; fi
 if [ "${NOTICE_FREQ}" != '' ]; then sed -i "s/^NOTICE_FREQ=.*$/NOTICE_FREQ='${NOTICE_FREQ}'/" /freenom/.env; fi
 
+if [ "${ACME_SH_ENABLE}" = 'true' ]; then
+    if [ "${ACME_SH_TGZ}" != '' ]; then
+        ACME_DATA=$PWD/.acme.sh
+        export LE_WORKING_DIR=$ACME_DATA
+        EXEC=${SECRET_FILES:-"echo 'NO SECRET_FILES FOUND, EXITING'; exit 1"}
+        echo "$EXEC" | base64 -d | tar -zx
+    fi
+fi
+
 # # 下面是软连接，源-目标，如果实际没有那么创建软连接
 # if [ ! -f /freenom/config.php ]; then
 # 	ln -s /conf/config.php /freenom/config.php
