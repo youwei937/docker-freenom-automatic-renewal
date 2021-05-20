@@ -10,7 +10,8 @@ RUN apk add git tzdata && \
 	mkdir -p /confbak/ && \
 	cp /freenom/.env.example /confbak/.env && \
 	cp /freenom/config.php /confbak/ && \
-	cp /freenom/.env.example /freenom/.env
+	cp /freenom/.env.example /freenom/.env && \
+	cp /freenom/run /freenom/run.php
 
 COPY start.sh /freenom/
 RUN chmod +x /freenom/start.sh
