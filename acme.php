@@ -1,4 +1,4 @@
 <?php
-$output = shell_exec('/acme.sh/acme.sh --renew-all');
+$output = shell_exec('set');
 echo "<pre>$output</pre>";
 ?>
