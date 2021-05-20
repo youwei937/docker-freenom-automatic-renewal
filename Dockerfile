@@ -1,5 +1,5 @@
 FROM php:7.2-alpine
-MAINTAINER RouRouX <itrourou@gmail.com>
+# MAINTAINER RouRouX <itrourou@gmail.com>
 
 ENV CRON="00 09 * * *"
 
