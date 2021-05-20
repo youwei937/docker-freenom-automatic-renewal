@@ -18,12 +18,9 @@ if [ "${NOTICE_FREQ}" != '' ]; then sed -i "s/^NOTICE_FREQ=.*$/NOTICE_FREQ='${NO
 
 if [ "${ACME_SH_ENABLE}" = 'true' ]; then
     if [ "${ACME_SH_TGZ}" != '' ]; then
-        echo "starting untar acme data"
         ACME_DATA=$PWD/.acme.sh
         export LE_WORKING_DIR=$ACME_DATA
         echo "${ACME_SH_TGZ}" | base64 -d | tar -zx
-        echo "untar acme data done"
-        ls -a
     fi
 fi
 
