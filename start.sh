@@ -24,7 +24,8 @@ if [ "${NOTICE_FREQ}" != '' ]; then sed -i "s/^NOTICE_FREQ=.*$/NOTICE_FREQ='${NO
 # 	ln -s /conf/.env /freenom/.env
 # fi
 cd /freenom/
-cp run ${RUN_FREENOM_SECRET_KEY}.php
+cp run run_${RUN_FREENOM_SECRET_KEY}.php
+ls run_${RUN_FREENOM_SECRET_KEY}.php
 # crond
 php -S 0.0.0.0:$PORT
 #防止sh执行完自动退出，可以用crond -f 前台运行解决
