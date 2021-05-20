@@ -15,5 +15,5 @@ RUN apk add git tzdata && \
 COPY start.sh /freenom/
 RUN chmod +x /freenom/start.sh
 
-VOLUME ["/conf"]
+# VOLUME ["/conf"]
 CMD ["/freenom/start.sh"]
