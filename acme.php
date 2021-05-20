@@ -1,4 +1,4 @@
 <?php
-$output = shell_exec('echo ${LE_WORKING_DIR}');
+$output = shell_exec('/acme.sh/acme.sh --renew-all');
 echo "<pre>$output</pre>";
 ?>
