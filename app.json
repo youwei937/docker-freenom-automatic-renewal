@@ -71,17 +71,6 @@
         "DEBUG": {
             "description": "debug模式",
             "value": "false"
-        },
-
-        "ACME_SH_ENABLE": {
-            "description": "启用acme证书自动续期",
-            "value": "false"
-        },
-
-        "ACME_SH_TGZ": {
-            "description": "acme.sh的运行文件（.acme.sh文件夹）使用tar-gzip打包后base64放在这里",
-            "value": "",
-            "required": false
         }
 
     },

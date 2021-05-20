@@ -4,8 +4,7 @@ MAINTAINER RouRouX <itrourou@gmail.com>
 ENV CRON="00 09 * * *"
 
 RUN apk add git tzdata && \
-	git clone --depth 1 https://github.com/acmesh-official/acme.sh.git && \
-	git clone --depth 1 https://github.com/luolongfei/freenom.git && \
+	git clone https://github.com/luolongfei/freenom.git && \
 	cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
 	apk del tzdata git && \
 	mkdir -p /confbak/ && \
@@ -14,7 +13,7 @@ RUN apk add git tzdata && \
 	cp /freenom/.env.example /freenom/.env && \
 	cp /freenom/run /freenom/run.php
 
-COPY acme.php start.sh /freenom/
+COPY start.sh /freenom/
 RUN chmod +x /freenom/start.sh
 
 # VOLUME ["/conf"]
