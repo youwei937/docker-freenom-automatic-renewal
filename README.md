@@ -10,10 +10,6 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
 
-## 功能
-
-自动续期freenom域名和acme证书（可选开启）
-
 ## 执行命令：
 
 默认命令
