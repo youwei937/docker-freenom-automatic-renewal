@@ -75,7 +75,6 @@
 
         "RUN_FREENOM_SECRET_KEY": {
             "description": "使用'{yourdomain}.herokuapp.com/run_{RUN_FREENOM_SECRET_KEY}.php'触发域名申请。为避免被不恰当的人恶意访问造成频繁触发，需要使用随机生成的字符串作为路径名",
-            "value": "false",
             "generator": "secret"
         }
 
