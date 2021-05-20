@@ -1,7 +1,7 @@
 FROM php:7.2-alpine
-MAINTAINER RouRouX <itrourou@gmail.com>
+# MAINTAINER RouRouX <itrourou@gmail.com>
 
-ENV CRON="00 09 * * *"
+# ENV CRON="00 09 * * *"
 
 RUN apk add git tzdata && \
 	git clone https://github.com/luolongfei/freenom.git && \
@@ -10,8 +10,7 @@ RUN apk add git tzdata && \
 	mkdir -p /confbak/ && \
 	cp /freenom/.env.example /confbak/.env && \
 	cp /freenom/config.php /confbak/ && \
-	cp /freenom/.env.example /freenom/.env && \
-	cp /freenom/run /freenom/run.php
+	cp /freenom/.env.example /freenom/.env
 
 COPY start.sh /freenom/
 RUN chmod +x /freenom/start.sh
