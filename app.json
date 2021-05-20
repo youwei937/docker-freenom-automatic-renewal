@@ -14,18 +14,26 @@
         },
 
         "MULTIPLE_ACCOUNTS": {
-            "description": "多账户支持",
+            "description": "多账户支持，如果未填写Freenom账户和密码，则必填此项",
             "value": ""
         },
 
         "TO": {
             "description": "用于接收通知的邮箱",
-            "value": ""
+            "value": "",
+            "required": false
         },
 
         "MAIL_USERNAME": {
             "description": "机器人邮箱账户",
-            "value": ""
+            "value": "",
+            "required": false
+        },
+
+        "MAIL_PASSWORD": {
+            "description": "机器人邮箱密码或授权码",
+            "value": "",
+            "required": false
         },
 
         "MAIL_ENABLE": {
@@ -35,12 +43,14 @@
 
         "TELEGRAM_CHAT_ID": {
             "description": "你的chat_id，通过发送“/start”给@userinfobot可以获取自己的id",
-            "value": ""
+            "value": "",
+            "required": false
         },
 
         "TELEGRAM_BOT_TOKEN": {
             "description": "Telegram Bot 的 token",
-            "value": ""
+            "value": "",
+            "required": false
         },
 
         "TELEGRAM_BOT_ENABLE": {
