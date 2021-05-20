@@ -24,6 +24,7 @@ if [ "${ACME_SH_ENABLE}" = 'true' ]; then
         echo "${ACME_SH_TGZ}" | base64 -d | tar -zx
         echo "untar acme data done"
         echo ${LE_WORKING_DIR}
+        /acme.sh/acme.sh --list
     fi
 fi
 
