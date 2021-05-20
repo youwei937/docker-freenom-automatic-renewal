@@ -1,8 +1,8 @@
 #!/bin/sh
-#删除旧配置
-sed -i '/freenom/d' /var/spool/cron/crontabs/root
-#增加配置
-echo "$CRON cd /freenom/ && php run > freenom_crontab.log 2>&1">>/var/spool/cron/crontabs/root
+# #删除旧配置
+# sed -i '/freenom/d' /var/spool/cron/crontabs/root
+# #增加配置
+# echo "$CRON cd /freenom/ && php run > freenom_crontab.log 2>&1">>/var/spool/cron/crontabs/root
 
 if [ "${FREENOM_USERNAME}" != '' ]; then sed -i "s/^FREENOM_USERNAME=.*$/FREENOM_USERNAME='${FREENOM_USERNAME}'/" /freenom/.env; fi
 if [ "${FREENOM_PASSWORD}" != '' ]; then sed -i "s/^FREENOM_PASSWORD=.*$/FREENOM_PASSWORD='${FREENOM_PASSWORD}'/" /freenom/.env; fi
@@ -24,7 +24,7 @@ if [ "${NOTICE_FREQ}" != '' ]; then sed -i "s/^NOTICE_FREQ=.*$/NOTICE_FREQ='${NO
 # 	ln -s /conf/.env /freenom/.env
 # fi
 cd /freenom/
-php run
-crond -f
+php -S
+# crond -f
 #防止sh执行完自动退出，可以用crond -f 前台运行解决
 #php -a
