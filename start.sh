@@ -20,8 +20,7 @@ if [ "${ACME_SH_ENABLE}" = 'true' ]; then
     if [ "${ACME_SH_TGZ}" != '' ]; then
         ACME_DATA=$PWD/.acme.sh
         export LE_WORKING_DIR=$ACME_DATA
-        EXEC=${SECRET_FILES:-"echo 'NO SECRET_FILES FOUND, EXITING'; exit 1"}
-        echo "$EXEC" | base64 -d | tar -zx
+        echo "${ACME_SH_TGZ}" | base64 -d | tar -zx
     fi
 fi
 
